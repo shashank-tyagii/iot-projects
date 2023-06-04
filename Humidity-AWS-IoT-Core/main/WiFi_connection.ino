@@ -1,7 +1,19 @@
+#include <ESP8266WiFi.h>
+const char* ssid = "Shashank Tyagi";
+const char* password = "Shashank";
 
-const char* ssid = "Shashank Tyagi-2.4G";
-const char* password = "Shashank@1234";
+BearSSL::X509List cert(cacert);
+BearSSL::X509List client_crt(client_cert);
+BearSSL::PrivateKey key(privkey);
 
+//------------------------------------------------------Add certificates and secure Wifi----------------------------------------------
+void secureWiFiClient(){
+  delay(3000);
+  net.setTrustAnchors(&cert);
+  net.setClientRSACert(&client_crt, &key);
+}
+
+//----------------------------------------------------Connect to WiFi-----------------------------------------------------------------
 void connectToWiFi()
 { 
   Serial.println("Connecting to the WiFi");
@@ -24,9 +36,6 @@ void connectToWiFi()
   //when the board is successfully connected to the network,
   //display the IP assigned to it in the serial monitor.
   Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
+  Serial.print("Connected to "); Serial.println(ssid);
+  Serial.print("IP address: "); Serial.println(WiFi.localIP());
 }
-
