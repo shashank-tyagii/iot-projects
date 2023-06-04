@@ -8,6 +8,11 @@
 #define DHTTYPE DHT11                 // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
 
+//create 3 variables that are used to stores the pins to which is the LED
+const int red = D6;
+const int green = D7;
+const int blue = D8;
+
 float humidity,temperature;
 
 #define AWS_IOT_PUBLISH_TOPIC   "esp8266/pub"                     //Subscribe the message from AWS
@@ -23,7 +28,11 @@ void setup()
   connectToWiFi();
   secureWiFiClient();
   connectAWS();
+  
   dht.begin();
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
 }
 
 //------------------------------------------------------- Connent with AWS-------------------------------------------------------------
@@ -51,7 +60,7 @@ void connectAWS()
 
 
 //---------------------------------------------------- Read Message from AWS -----------------------------------------------------------
-void messageReceived(char *topic, byte *payload, unsigned int length)
+void messageReceived(char *topic, byte *payload, unsigned int length)        // Topic is the subscribe topic
 {
   Serial.print("Received ["); Serial.print(topic); Serial.print("]: ");
   for (int i = 0; i < length; i++)
@@ -59,6 +68,16 @@ void messageReceived(char *topic, byte *payload, unsigned int length)
     Serial.print((char)payload[i]);
   }
   Serial.println();
+
+  StaticJsonDocument<1000> doc;
+  deserializeJson(doc, payload);
+
+  int red_json = doc["red"];
+  int green_json = doc["green"];
+  int blue_json = doc["blue"];
+
+  RGBLed(red_json,green_json,blue_json);
+  
 }
 
 //----------------------------------------------------- Send Message to AWS------------------------------------------------------------
