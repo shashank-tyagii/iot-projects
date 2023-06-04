@@ -8,7 +8,7 @@
 int8_t TIME_ZONE = +5;                                           //India: +5:30 UTC
  
 //AWS MQTT host from AWS Settings.........................................................................
-const char MQTT_HOST[] = "avglbvv7vep02-ats.iot.eu-north-1.amazonaws.com";      //Your host ID here. Get it from AWS settings
+const char MQTT_HOST[] = "avg.iot.eu-north-1.amazonaws.com";      //Your host ID here. Get it from AWS settings
  
 // Root CA1 Certificate will be here ▼.......................................................................
 static const char cacert[] PROGMEM = R"EOF(
@@ -30,7 +30,7 @@ U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
 N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
 o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
 5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
-rqXRfboQnoZsG4q5WTP468SQvvG5
+rqXRfboQnoZsG4q5WTP46
 -----END CERTIFICATE-----
 )EOF";
  
@@ -56,7 +56,7 @@ nk2pddUxY6+dNWZC/PcRjF0zMO0mr/xsuhu6fOcD7AJlwhue/DNwANTK6V8CcX13
 blmVx77YI6YjrjPAPj3GXmglka7Y/9sF9jmyaliHG8hASaNd5TyVbTozYqUFfxWv
 lcUljwjK/KgTLBMntpWi+p3RsTVaoIGsZrss9BGaEAMBBqrNxpTStmWSAG8Bz4bN
 OBHDVCyVZHdL+sffOrztNiuxF/RjSURc0CB9RSuadbIitquWgqQp98+YnDtlo0JB
-b1aH8/iW/5xW8XSjMsQPyrhJwTAQpF0pXIwaRPFlg9bhGEvOLqvj/bH62BnHOQ==
+b1aH8/iW/5xW8XSjMsQPyrhJwTAQpF0pXIwaRPFlg9bhGEvOLqvj/
 -----END CERTIFICATE-----
 )KEY";
  
@@ -88,6 +88,6 @@ tfiHQMwti+ZyB3iOjejKkbyhgVBA27w14izcu81WAuZdUTqk6RsCl4WVfUKxky/M
 5OZABzLwzz2tD5zF1EjbHPmR/JxT/AqembPnU/wRPgOnkGEzXo4+YKqQFDni9v+o
 gq01ynwBAoGBAMkmDqkj6A2Ab43umQ3o+MRg4zCrylxQaoe55VspHBo6sd48n6fn
 PmKFQc5sd7jjelKNXW5/yh/aJiN3hQDXZed78APZ+4DTEPOQ4qV76f0emwh+9U1a
-SXoTtxaQ0vloGbET8Gxiwmp96QO6h600vXYT76SOxHR7o/K77MD0zIwd
+SXoTtxaQ0vloGbET8Gxiwmp96QO6h600vXYT76SOxHR7o
 -----END RSA PRIVATE KEY-----
 )KEY";
