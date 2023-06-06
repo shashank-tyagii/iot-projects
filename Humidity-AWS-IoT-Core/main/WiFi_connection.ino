@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
-const char* ssid = "Shashank Tyagi-2.4G";
-const char* password = "Shashank@1234";
+const char* ssid = "Shashank";
+const char* password = "Shashank";
 
 BearSSL::X509List cert(cacert);
 BearSSL::X509List client_crt(client_cert);
